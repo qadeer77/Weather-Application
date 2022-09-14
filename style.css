@@ -15,6 +15,46 @@ body {
     background-position: center;
 }
 
+.big {
+    background-image: url("https://giffiles.alphacoders.com/205/20593.gif");
+    background-size: cover;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.clear {
+    background-image: url("https://thumbs.gfycat.com/FaithfulWhoppingAnteater-max-1mb.gif");
+    background-size: cover;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.clouds {
+    background-image: url("https://i.pinimg.com/originals/6f/ab/99/6fab9981cb14d4ddbf6057801b05158a.gif");
+    background-size: cover;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.haze {
+    background-image: url("http://media.giphy.com/media/11baS10aUeWdtS/giphy.gif");
+    background-size: cover;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 #search-form {
     display: flex;
     justify-content: center;
@@ -81,6 +121,7 @@ main {
 
 #search-button {
     color: #494949;
+    /* background-color: #ff6768 !important; */
     text-transform: uppercase;
     text-decoration: none;
     background: white;
@@ -89,6 +130,10 @@ main {
     padding: 11px;
     border: 2px solid #494949;
     display: inline-block;
+    transition: all 0.4 ease 0s;
+    color: #ffffff;
+    background: #ff6768;
+    border-color: #ff6768;
     transition: all 0.4 ease 0s;
 }
 
