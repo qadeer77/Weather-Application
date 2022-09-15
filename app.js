@@ -1,7 +1,7 @@
 const apiKey = `182aa2c63a537687d37203b245b80957`;
 const form = document.querySelector("form");
 const searchInput = document.getElementById("search-input");
-console.log(searchInput)
+// console.log(searchInput)
 const appContainer = document.getElementById("app-container");
 const body1 = document.querySelector("#body1");
 
@@ -61,3 +61,4 @@ form.addEventListener("submit", (event) => {
     searchInput.value = " ";
     event.preventDefault();
 })
+
