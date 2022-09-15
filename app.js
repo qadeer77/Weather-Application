@@ -6,48 +6,51 @@ const body1 = document.querySelector("#body1");
 
 const getWeather = async (city) => {
     // setTimeout(() => {
-    appContainer.innerHTML = `<h2 id="notFound">Loading....<h2>`
-    // }, -5000)
-    const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-    const response = await fetch(api);
-    const data = await response.json()
-    return showWeather(data);
-}
-
-const showWeather = (data) => {
-    // console.log(data)
-    if (data.cod === "404") {
-        appContainer.innerHTML = `<h2 id="notFound"> City Not Found <h2>`
-        return;
+        appContainer.innerHTML = `<h2 id="notFound">Loading....<h2>`
+        // }, -5000)
+        const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+        const response = await fetch(api);
+        const data = await response.json()
+        return showWeather(data);
     }
-    appContainer.innerHTML = `
-    <div id="location">
-    <p>${data.name}</p>
-    </div>
-    <div id="temp">
-    <img id="temp-icon" src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="">
-    <p><span class="qadeer" id="temp-value">${Math.floor(data.main.temp)}</span><span class="qadeer" id="temp-unit">&#176c</span></p>
-    <p id="climate">${data.weather[0].main}</p>
-    </div>
     
-    `
-    if (data.weather[0].main === "Smoke") {
-        body1.className += " big";
+    const showWeather = (data) => {
+        // console.log(data)
+        if (data.cod === "404") {
+            appContainer.innerHTML = `<h2 id="notFound"> City Not Found <h2>`
+            return;
+        }
+        appContainer.innerHTML = `
+        <div id="location">
+        <p>${data.name}</p>
+        </div>
+        <div id="temp">
+        <img id="temp-icon" src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="">
+        <p><span class="qadeer" id="temp-value">${Math.floor(data.main.temp)}</span><span class="qadeer" id="temp-unit">&#176c</span></p>
+        <p id="climate">${data.weather[0].main}</p>
+        </div>
+        
+        `
+        if (data.weather[0].main === "Smoke") {
+        body1.className = "big";
     }
     else if (data.weather[0].main === "Clear") {
-        body1.className += " clear";
+        body1.className = "clear";
     }
-    else if (data.weather[0].main === "Clouds") {
-        body1.className += " clouds"
+   else if (data.weather[0].main === "Clouds") {
+        body1.className = "clouds"
     }
-    else if (data.weather[0].main === "Haze") {
-        body1.className += " haze"
+   else if (data.weather[0].main === "Haze") {
+        body1.className = "haze"
+    }
+    else if (data.weather[0].main === "Rain") {
+        body1.className = "rain"
     }
 }
 
 
 form.addEventListener("submit", (event) => {
     getWeather(searchInput.value);
-    // searchInput.value = " ";
+    searchInput.value = " ";
     event.preventDefault();
 })
